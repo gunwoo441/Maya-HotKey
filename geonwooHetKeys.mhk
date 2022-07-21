@@ -1,0 +1,69 @@
+//Maya Preference 2022 (Release 1)
+//
+//
+
+//
+// The runtime commands referenced by the hotkeys
+//
+runTimeCommand
+	-annotation ""
+	-category "Custom Scripts"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("performSetKeyframeArgList 1 {\"0\", \"animationList\"};\nkeyframe -time `currentTime -q` -tds 1;")
+	GreenKey;
+
+runTimeCommand
+	-annotation ""
+	-category "Custom Scripts"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("timeSliderClearKey;")
+	delKey;
+
+//
+// The name commands referenced by the hotkeys
+//
+nameCommand
+	-annotation "GreenKeyNameCommand"
+	-sourceType "mel"
+	-command ("GreenKey")
+	GreenKeyNameCommand;
+
+nameCommand
+	-annotation "delKeyNameCommand"
+	-sourceType "mel"
+	-command ("delKey")
+	delKeyNameCommand;
+
+//
+// The user hotkeys
+//
+//
+// The hotkey set
+//
+hotkeySet -source "Maya_Default" -current geonwooHetKeys;
+//
+// The hotkey contexts and hotkeys
+//
+hotkey -keyShortcut "g" -alt -name ("GreenKeyNameCommand");
+hotkey -keyShortcut "d" -alt -sht -name ("");
+hotkey -keyShortcut "d" -alt -name ("delKeyNameCommand");
+hotkey -keyShortcut "d" -ctl -alt -name ("");
+hotkeyCtx -type "Editor" -addClient "shapePanel";
+hotkeyCtx -type "Editor" -addClient "polyTexturePlacementPanel";
+hotkeyCtx -type "Editor" -addClient "hyperGraphPanel";
+hotkeyCtx -type "Editor" -addClient "outlinerPanel";
+hotkeyCtx -type "Editor" -addClient "timeEditorPanel";
+hotkeyCtx -type "Editor" -addClient "hyperShadePanel";
+hotkeyCtx -type "Editor" -addClient "graphEditor";
+hotkeyCtx -type "Editor" -addClient "posePanel";
+hotkeyCtx -type "Editor" -addClient "profilerPanel";
+hotkeyCtx -type "Editor" -addClient "nodeEditorPanel";
+hotkeyCtx -type "Tool" -addClient "texCutContext";
+hotkeyCtx -type "Tool" -addClient "sculptMeshCache";
+hotkeyCtx -type "Tool" -addClient "SymmetrizeUVBrush";
+hotkeyCtx -type "Tool" -addClient "polyCutUV";
+hotkeyCtx -type "Tool" -addClient "xgmIGBrush";
+hotkeyCtx -type "Tool" -addClient "texSculptCacheContext";
+hotkeyCtx -type "Tool" -addClient "Unfold3DBrush";
